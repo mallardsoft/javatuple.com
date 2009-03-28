@@ -1,0 +1,38 @@
+<!--#set var="title" value="Using tuples as keys" -->
+<!--#include virtual="header.shtml" -->
+One of the most powerful uses of tuples is for creating keys on-the-fly. Tuples can be used in hash maps to store and retrieve objects by a multi-valued key.<p/>  <pre>Map&lt;Pair&lt;String, String&gt;, Integer&gt; population =<br />    <span style="color: blue">new</span> HashMap&lt;Pair&lt;String, String&gt;, Integer&gt;();
+population.put(
+    Tuple.from(<span style="color: maroon">&quot;TX&quot;</span>, <span style="color: maroon">&quot;Dallas&quot;</span>),
+    <span style="color: maroon">1213825</span>);
+population.put(
+    Tuple.from(<span style="color: maroon">&quot;TX&quot;</span>, <span style="color: maroon">&quot;Fort Worth&quot;</span>),
+    <span style="color: maroon">624067</span>);
+population.put(
+    Tuple.from(<span style="color: maroon">&quot;IL&quot;</span>, <span style="color: maroon">&quot;Springfield&quot;</span>),
+    <span style="color: maroon">203564</span>);
+population.put(
+    Tuple.from(<span style="color: maroon">&quot;NM&quot;</span>, <span style="color: maroon">&quot;Albuquerque&quot;</span>),
+    <span style="color: maroon">494236</span>);
+
+<span style="color: blue">int</span> p = population.get(
+    Tuple.from(<span style="color: maroon">&quot;TX&quot;</span>, <span style="color: maroon">&quot;Fort Worth&quot;</span>));
+<span style="color: green">// p = 624067</span></pre>
+
+<p>The tuples hash value is based on the hash value of its elements. It is also sensitive to the order of the elements.</p>
+
+<p>Tuples can also be used as keys in sorted collections. They are sorted by the first element in increasing order, and then by the next element, and so on.</p>
+
+<pre>SortedSet&lt;Pair&lt;Character,Integer&gt;&gt; bingo =
+    <span style="color: blue">new</span> TreeSet&lt;Pair&lt;Character,Integer&gt;&gt;();
+bingo.add(Tuple.from(<span style="color: maroon">'B'</span>,<span style="color: maroon">5</span>));
+bingo.add(Tuple.from(<span style="color: maroon">'N'</span>, <span style="color: maroon">41</span>));
+bingo.add(Tuple.from(<span style="color: maroon">'I'</span>, <span style="color: maroon">23</span>));
+bingo.add(Tuple.from(<span style="color: maroon">'G'</span>,<span style="color: maroon">55</span>));
+bingo.add(Tuple.from(<span style="color: maroon">'O'</span>, <span style="color: maroon">69</span>));
+bingo.add(Tuple.from(<span style="color: maroon">'I'</span>, <span style="color: maroon">27</span>));
+bingo.add(Tuple.from(<span style="color: maroon">'O'</span>, <span style="color: maroon">61</span>));
+
+String s = bingo.toString();
+<span style="color: green">// s = &quot;[(B, 5), (G, 55), (I, 23), (I, 27), &quot;</span>
+<span style="color: green">//     &quot;(N, 41), (O, 61), (O, 69)]&quot;</span></pre>
+<!--#include virtual="footer.shtml" -->

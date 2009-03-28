@@ -1,0 +1,20 @@
+<!--#set var="title" value="Home" -->
+<!--#include virtual="header.shtml" -->
+<p>
+This Java Tuple library implements type-safe tuples of any size using generics. Download the <a href="bin/tuple.zip">source code</a> or <a href="bin/tuple.jar">binary</a>.</p>
+<pre>import com.mallardsoft.tuple.Pair;
+import com.mallardsoft.tuple.Tuple;
+import java.util.HashMap;
+import java.util.Map;
+
+    Map&lt;Pair&lt;String, String&gt;, Integer&gt; population = new HashMap&lt;Pair&lt;String, String&gt;, Integer&gt;();
+    population.put(
+        Tuple.from("TX", "Dallas"),
+        1213825);
+
+    String ip = Tuple.from(192, 168, 0, 100).toString("", ".", "");
+    // ip = "192.168.0.100"
+</pre>
+<p>Use the links to the left to see different ways of using this tuple library. <a href="http://www.adventuresinsoftware.com/blog/?p=43#comments">Leave a comment</a> if you like it, dislike it, or have something new to contribute.</p>
+<p><a href="http://www.adventuresinsoftware.com/blog/">Michael L Perry</a></p>
+<!--#include virtual="footer.shtml" -->

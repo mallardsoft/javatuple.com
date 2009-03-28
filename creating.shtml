@@ -1,0 +1,14 @@
+<!--#set var="title" value="Creating tuples" -->
+<!--#include virtual="header.shtml" -->
+The easiest way to create a tuple is to use the <strong>from()</strong> static method. This method is overloaded for tuples of one to ten elements, and returns one of the <a href="named.shtml">named tuple types</a>.<p/>  <pre>Triple&lt;String,String,Integer&gt; cityPopulation =
+    Tuple.from(<span style="color: maroon">&quot;NM&quot;</span>, <span style="color: maroon">&quot;Albuquerque&quot;</span>, <span style="color: maroon">494236</span>);</pre>
+
+<p>This method only works for tuples of limited size. If you want to create tuples of larger sizes, then use the <strong>prepend()</strong> method. <strong>prepend()</strong> adds an element to the beginning of another tuple. Rather than modifying the existing tuple, it returns a new one.</p>
+
+<p>The type returned by the <strong>prepend()</strong> method is a nested <strong>Tuple</strong> generic type. The <strong>Tuple</strong> generic type takes two parameters, the type of the first element, and the type of the rest of the elements. The second parameter is itself a <strong>Tuple</strong>. The last type in the nested list is <strong>End</strong>.</p>
+
+<pre>Tuple&lt;Double,Tuple&lt;Integer,Tuple&lt;String,End&gt;&gt;&gt; t1 =
+    Tuple.from(<span style="color: maroon">&quot;c&quot;</span>).prepend(<span style="color: maroon">2</span>).prepend(<span style="color: maroon">2</span><span style="color: maroon">.3</span>);</pre>
+
+<p>Although this method is more flexible, it is more difficult syntax. The elements must be added to the tuple in reverse order. And the type is expressed in its fully exploded form. If you must use this syntax, then take full advantage of Eclipse's refactoring tools to generate type declarations.</p>
+<!--#include virtual="footer.shtml" -->

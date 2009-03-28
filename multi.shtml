@@ -1,0 +1,42 @@
+<!--#set var="title" value="Multiple valued returns" -->
+<!--#include virtual="header.shtml" -->
+Another powerful reason for using tuples is to return multiple values from a single method. Declare the method return type using one of the <a href="named.shtml">named tuple types</a>. Then use the <strong>from()</strong> method to return the values.<p/>  <pre><span style="color: blue">private</span> Pair&lt;Boolean, Integer&gt; findCharacter(String string, <span style="color: blue">char</span> c) {
+    <span style="color: blue">int</span> index = string.indexOf(c);
+    <span style="color: blue">if</span> (index == -<span style="color: maroon">1</span>)
+        <span style="color: blue">return</span> Tuple.from(<span style="color: maroon">false</span>, <span style="color: maroon">0</span>);
+    <span style="color: blue">else</span>
+        <span style="color: blue">return</span> Tuple.from(<span style="color: maroon">true</span>, index);
+}</pre>
+
+<p>It is best to use the <strong>Variable</strong> class and <strong>extract()</strong> method to retrieve values so that the tuple never needs to be stored when calling the method.</p>
+
+<pre>Variable&lt;Boolean&gt; found = <span style="color: blue">new</span> Variable&lt;Boolean&gt;();
+Variable&lt;Integer&gt; index = <span style="color: blue">new</span> Variable&lt;Integer&gt;();
+
+findCharacter(<span style="color: maroon">&quot;Hello, world&quot;</span>, <span style="color: maroon">'w'</span>).
+    extract(found).extract(index);
+<span style="color: blue">if</span> (found.get()) {
+    <span style="color: blue">int</span> i = index.get();
+    <span style="color: green">// i = 7</span>
+}</pre>
+
+<p>If you would rather return values via parameters, the <strong>Variable</strong> class can be used instead of the traditional single-valued array. Use the <strong>set()</strong> method to assign a value to a <strong>Variable</strong>.</p>
+
+<pre><span style="color: blue">private</span> <span style="color: blue">boolean</span> findCharacter(String string, <span style="color: blue">char</span> c,
+    Variable&lt;Integer&gt; indexRef) {
+    <span style="color: blue">int</span> index = string.indexOf(c);
+    <span style="color: blue">if</span> (index == -<span style="color: maroon">1</span>)
+        <span style="color: blue">return</span> <span style="color: maroon">false</span>;
+    <span style="color: blue">else</span> {
+        indexRef.set(index);
+        <span style="color: blue">return</span> <span style="color: maroon">true</span>;
+    }
+}</pre>
+
+<pre>Variable&lt;Integer&gt; index = <span style="color: blue">new</span> Variable&lt;Integer&gt;();
+
+<span style="color: blue">if</span> (findCharacter(<span style="color: maroon">&quot;Hello, world&quot;</span>, <span style="color: maroon">'w'</span>, index)) {
+    <span style="color: blue">int</span> i = index.get();
+    <span style="color: green">// i = 7</span>
+}</pre>
+<!--#include virtual="footer.shtml" -->

@@ -1,0 +1,22 @@
+<!--#set var="title" value="Extracting elements" -->
+<!--#include virtual="header.shtml" -->
+You can extract all elements from a tuple in one statement by declaring a set of variable using the <strong>Variable</strong> generic type. The <strong>Variable</strong> type takes one parameter, which must match the type of the element. Then use the <strong>extract()</strong> method to remove an element from the tuple and store it in a variable. Chain <strong>extract() </strong>calls together to get all elements.<p/>  <pre>Variable&lt;String&gt; v1 = <span style="color: blue">new</span> Variable&lt;String&gt;();
+Variable&lt;Integer&gt; v2 = <span style="color: blue">new</span> Variable&lt;Integer&gt;();
+
+Tuple.from(<span style="color: maroon">&quot;Hello&quot;</span>, <span style="color: maroon">42</span>).extract(v1).extract(v2);</pre>
+
+<p>Use the <strong>get()</strong> method to access the value of a <strong>Variable</strong> object.</p>
+
+<pre>String e1 = v1.get();
+<span style="color: blue">int</span> e2 = v2.get();</pre>
+
+<p></p>
+
+<p>As an alternative, you can get an element directly from a tuple using one of the <strong>get<em>n</em>()</strong> methods. The <em>n</em> is replaced with the 1-based index of the element you want to get. So <strong>get1()</strong> will return the first element, and <strong>get3()</strong> will return the third.</p>
+
+<pre>Pair&lt;String, Integer&gt; t = Tuple.from(<span style="color: maroon">&quot;Hello&quot;</span>, <span style="color: maroon">42</span>);
+String e1 = Tuple.get1(t);
+<span style="color: blue">int</span> e2 = Tuple.get2(t);</pre>
+
+<p>There are only 10 <strong>get<em>n</em>()</strong> methods, so this technique is not as flexible as the <strong>extract()</strong> method. And this technique cannot be used to extract all variables in one statement. As a result, the tuple must be stored, which means that the type must be expressed. For small tuples of <a href="named.shtml">named types</a>, this is not difficult. But if the tuple gets large or does not use a named type, it may be easier to extract all members without storing the tuple itself.</p>
+<!--#include virtual="footer.shtml" -->

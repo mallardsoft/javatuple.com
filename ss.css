@@ -1,0 +1,84 @@
+body {
+margin:0;
+padding:0;
+color:#000;
+background: #000;
+font: 0.8em Verdana, arial, sans-serif;
+}
+#header {
+top:0;
+left:0;
+height:1.4em;
+color:#ddd;
+margin: 0.24em;
+font-size: 2.5em;
+padding:0;
+}
+#huedge {
+background-image: url(images/huedge.png);
+background-color: #7E9E74;
+background-position: top left;
+background-repeat: repeat-x;
+}
+#hledge {
+background-image: url(images/hledge.png);
+background-position: top left;
+background-repeat: repeat-y;
+}
+#hcorner {
+background-image: url(images/hcorner.png);
+background-position: top left;
+background-repeat: no-repeat;
+padding: 0 0 0.1em 0.1em;
+}
+#content {
+margin-left:16em;
+margin-right:0.6em;
+}
+#uedge {
+background-image: url(images/uedge.png);
+background-color: #99B4D1;
+background-position: top left;
+background-repeat: repeat-x;
+}
+#ledge {
+background-image: url(images/ledge.png);
+background-position: top left;
+background-repeat: repeat-y;
+}
+#corner {
+background-image: url(images/corner.png);
+background-position: top left;
+background-repeat: no-repeat;
+padding: 0.4em;
+}
+#main {
+min-height: 20em;
+}
+pre {
+/*\*/ overflow: auto !important; /* */ overflow: scroll;
+margin: 0;
+border: 2px solid #659CD4;
+padding: 0.2em;
+font: 10pt Courier New, Courier, monospace;
+color: #000;
+background: #fff;
+}
+#nav-one {
+position:absolute;
+top: 3.8em;
+left:0;
+width:14.6em;
+color: white;
+margin-left: 0.6em;
+padding:0.5em;
+}
+#nav-one a:link {color: white;}
+#nav-one a:visited {color: #fcf;}
+#footer {
+text-align:center;
+margin: 0.6em;
+padding: 0.5em;
+color:#009;
+background:#ddd;
+}

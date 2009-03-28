@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Java Tuple - <!--#echo var="title" --></title>
+<link rel="stylesheet" href="ss.css" type="text/css" media="screen" />
+</head>
+<body>
+<div id="header">
+<div id="huedge">
+<div id="hledge">
+<div id="hcorner">
+<!--#echo var="title" -->
+</div>
+</div>
+</div>
+</div>
+<div id="content">
+<div id="uedge">
+<div id="ledge">
+<div id="corner">
+<div id="main">

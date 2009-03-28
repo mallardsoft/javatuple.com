@@ -1,0 +1,11 @@
+<div id="nav-one">
+<a href="index.shtml">Home</a><br/><br/>
+<a href="creating.shtml">Creating tuples</a><br/>
+<a href="extracting.shtml">Extracting elements</a><br/>
+<a href="formatting.shtml">Formatting tuples</a><br/><br/>
+<a href="keys.shtml">Using tuples as keys</a><br/>
+<a href="multi.shtml">Multiple valued returns</a><br/>
+<a href="named.shtml">Named tuple types</a><br/><br/>
+<a href="license.shtml">License</a><br/><br/>
+<a href="http://www.adventuresinsoftware.com/blog/?p=43#comments">Comments</a><br/>
+</div>

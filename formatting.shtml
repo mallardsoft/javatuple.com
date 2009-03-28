@@ -1,0 +1,12 @@
+<!--#set var="title" value="Formatting tuples" -->
+<!--#include virtual="header.shtml" -->
+Tuples have a meaningful <strong>toString()</strong> method. It returns a comma-separated list of the elements, wrapped in parentheses.<p/>  <pre>Triple&lt;String,String,Integer&gt; cityPopulation =
+    Tuple.from(<span style="color: maroon">&quot;NM&quot;</span>, <span style="color: maroon">&quot;Albuquerque&quot;</span>, <span style="color: maroon">494236</span>);
+String s = cityPopulation.toString();
+<span style="color: green">// s = &quot;(NM, Albuquerque, 494236)&quot;</span></pre>
+
+<p>If you would like to change the formatting of the tuple, use the overloaded <strong>toString()</strong> method that takes the open, separator, and close strings.</p>
+
+<pre>String ip = Tuple.from(<span style="color: maroon">192</span>, <span style="color: maroon">168</span>, <span style="color: maroon">0</span>, <span style="color: maroon">100</span>).toString(<span style="color: maroon">&quot;&quot;</span>, <span style="color: maroon">&quot;.&quot;</span>, <span style="color: maroon">&quot;&quot;</span>);
+<span style="color: green">// ip = &quot;192.168.0.100&quot;</span></pre>
+<!--#include virtual="footer.shtml" -->

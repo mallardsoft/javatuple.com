@@ -1,0 +1,74 @@
+<!--#set var="title" value="Named tuple types" -->
+<!--#include virtual="header.shtml" -->
+The general tuple type is expressed as a nested collection of generic parameters. But to simplify the syntax, you can use one of the named tuple types. Names are given to tuples from one to ten elements in size.<p/>
+
+<table cellspacing="0" cellpadding="2" width="400" border="0"><tbody>
+    <tr>
+      <td valign="top" width="200"><b>Size</b></td>
+
+      <td valign="top" width="200"><b>Name</b></td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">1</td>
+
+      <td valign="top" width="200">Single</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">2</td>
+
+      <td valign="top" width="200">Pair</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">3</td>
+
+      <td valign="top" width="200">Triple</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">4</td>
+
+      <td valign="top" width="200">Quadruple</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">5</td>
+
+      <td valign="top" width="200">Quintuple</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">6</td>
+
+      <td valign="top" width="200">Sextuple</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">7</td>
+
+      <td valign="top" width="200">Septuple</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">8</td>
+
+      <td valign="top" width="200">Octuple</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">9</td>
+
+      <td valign="top" width="200">Nonuple</td>
+    </tr>
+
+    <tr>
+      <td valign="top" width="200">10</td>
+
+      <td valign="top" width="200">Decuple</td>
+    </tr>
+  </tbody></table>
+
+<p>Named tuple types are derived from their nested representations. As a result, a named type can be converted into a nested <strong>Tuple</strong> type, but a nested <strong>Tuple</strong> cannot be converted to a named type.</p>
+<!--#include virtual="footer.shtml" -->
